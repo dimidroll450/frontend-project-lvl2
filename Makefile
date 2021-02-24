@@ -10,8 +10,10 @@ install-local:
 gendiff:
 	node bin/gendiff.js
 
-history:
+help:
 	node bin/gendiff.js -h
 
 lint:
 	npx eslint .
+
+.PHONY: test

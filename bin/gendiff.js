@@ -1,5 +1,13 @@
 #!/usr/bin/env node
 
-import app from '../src/gendiff.js';
+import { Command } from 'commander';
 
-app();
+const program = new Command();
+
+program
+  .description('Compares two configuration files and shows a difference.')
+  .version('0.0.1', '-V, --version', 'output the version number');
+
+program.parse();
+
+export default program;
