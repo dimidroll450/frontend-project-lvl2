@@ -1,0 +1,36 @@
+{
+  "name": "@hexlet/code",
+  "version": "0.0.1",
+  "description": "validator for yaml and json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimidroll450/frontend-project-lvl2.git"
+  },
+  "keywords": [
+    "validator",
+    "yaml",
+    "json",
+    "hexlet",
+    "pet-project"
+  ],
+  "author": "kvashchauskas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimidroll450/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/dimidroll450/frontend-project-lvl2#readme",
+  "type": "module",
+  "dependencies": {
+    "commander": "^7.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  },
+  "bin": "bin/gendiff.js"
+}
