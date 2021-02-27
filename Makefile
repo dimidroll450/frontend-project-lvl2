@@ -1,12 +1,6 @@
 install:
 	npm install
 
-publish:
-	npm publish --dry-run
-
-install-local:
-	sudo npm link
-
 gendiff:
 	node bin/gendiff.js
 
@@ -15,5 +9,14 @@ help:
 
 lint:
 	npx eslint .
+
+test:
+	npm test
+
+publish:
+	npm publish --dry-run
+
+install-local:
+	sudo npm link
 
 .PHONY: test
