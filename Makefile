@@ -13,6 +13,9 @@ lint:
 test:
 	npm test
 
+test-coverage:
+	npm test -- --coverage --coverageProviders=v8
+
 publish:
 	npm publish --dry-run
 

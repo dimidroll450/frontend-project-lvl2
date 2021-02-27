@@ -27,7 +27,6 @@
   "homepage": "https://github.com/dimidroll450/frontend-project-lvl2#readme",
   "type": "module",
   "dependencies": {
-    "@jest/globals": "^25.5.2",
     "commander": "^7.1.0",
     "lodash": "^4.17.21"
   },
@@ -36,6 +35,7 @@
     "transform": {}
   },
   "devDependencies": {
+    "@jest/globals": "^25.5.2",
     "eslint": "^7.20.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
