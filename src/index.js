@@ -1,16 +1,16 @@
 import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
+import toParse from './parsers.js';
 
 const readFile = (pathToFile) => fs.readFileSync(path.resolve(process.cwd(), pathToFile), 'utf-8');
 
 export default (path1, path2) => {
   const data1 = readFile(path1);
   const data2 = readFile(path2);
-  // возможно, формирование исходных данных
-  // стоит также вывести в отдельную плоскость
-  const obj1 = JSON.parse(data1);
-  const obj2 = JSON.parse(data2);
+
+  const obj1 = toParse(data1, path1);
+  const obj2 = toParse(data2, path2);
 
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
@@ -37,6 +37,7 @@ export default (path1, path2) => {
     }
     return acc;
   }, []);
+
   // вынести в отдельный файл
   const string = difference.join('\n  ');
   const result = `
