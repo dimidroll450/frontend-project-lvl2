@@ -18,7 +18,7 @@ export default (path1, path2) => {
   const sec = keys2.filter((key) => !obj1[key]);
   const allKeys = [...keys1, ...sec];
 
-  const sortedKeys = allKeys.sort();
+  const sortedKeys = _.sortBy(allKeys);
 
   const difference = sortedKeys.reduce((acc, key) => {
     if (!_.has(obj2, key)) { // it`s problem
