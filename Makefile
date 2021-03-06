@@ -1,8 +1,8 @@
 install:
 	npm install
 
-gendiff:
-	node bin/gendiff.js
+ast:
+	node src/buildAST.js
 
 help:
 	node bin/gendiff.js -h

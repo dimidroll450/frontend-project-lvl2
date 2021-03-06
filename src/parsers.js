@@ -4,8 +4,8 @@ import path from 'path';
 const jsonParse = (data) => JSON.parse(data);
 const yamlParse = (data) => yaml.load(data, 'utf-8');
 
-export default (data, file) => {
-  const typeOfFile = path.extname(file);
+export default (data, filepath) => {
+  const typeOfFile = path.extname(filepath);
   switch (typeOfFile) {
     case '.json':
       return jsonParse(data);

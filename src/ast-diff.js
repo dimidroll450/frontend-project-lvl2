@@ -4,13 +4,12 @@ const astDiff = (data1, data2) => {
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);
 
-  const filtered = keys2.filter((key) => !data1[key]);
-  const allKeys = [...keys1, ...filtered];
-  const sortedKeys = _.sortBy(allKeys);
+  const keys = _.union(keys1, keys2);
+  const sortedKeys = _.sortBy(keys);
 
   return sortedKeys.flatMap((key) => {
-    const originalValue = data1[key];
-    const changedValue = data2[key];
+    const originalValue = _.cloneDeep(data1[key]);
+    const changedValue = _.cloneDeep(data2[key]);
 
     if (_.isObject(originalValue) && _.isObject(changedValue)) {
       return {

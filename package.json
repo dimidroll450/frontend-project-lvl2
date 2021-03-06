@@ -36,8 +36,8 @@
     "transform": {}
   },
   "devDependencies": {
-    "@jest/globals": "^25.5.2",
-    "eslint": "^7.20.0",
+    "@jest/globals": "^26.6.2",
+    "eslint": "^7.21.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.1.5",
