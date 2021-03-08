@@ -6,32 +6,28 @@ const getValue = (value) => {
   return result;
 };
 const plain = (data, parentKey = null) => {
-  const result = data.reduce((acc, item) => {
+  const mapped = data.flatMap((item) => {
     const { state } = item;
     const currentKey = parentKey === null ? item.key : `${parentKey}.${item.key}`;
 
     switch (state) {
       case 'nested':
-        acc.push(plain(item.children, currentKey));
-        break;
+        return plain(item.children, currentKey);
       case 'unchanged':
-        break;
+        return '';
       case 'changed':
-        acc.push(`Property '${currentKey}' was updated. From ${getValue(item.originalValue)} to ${getValue(item.changedValue)}`);
-        break;
+        return `Property '${currentKey}' was updated. From ${getValue(item.originalValue)} to ${getValue(item.changedValue)}`;
       case 'deleted':
-        acc.push(`Property '${currentKey}' was removed`);
-        break;
+        return `Property '${currentKey}' was removed`;
       case 'added':
-        acc.push(`Property '${currentKey}' was added with value: ${getValue(item.value)}`);
-        break;
+        return `Property '${currentKey}' was added with value: ${getValue(item.value)}`;
       default:
         throw new Error('Invalid data');
     }
-    return acc;
-  }, []);
+  });
+  const filtered = mapped.filter((item) => item.length !== 0);
 
-  return result.join('\n');
+  return filtered.join('\n');
 };
 
 export default plain;
