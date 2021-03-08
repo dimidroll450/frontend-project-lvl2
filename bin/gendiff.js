@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { program } from 'commander';
+import { program } from 'commander/esm.mjs';
 import genDiff from '../src/main.js';
 
 program
