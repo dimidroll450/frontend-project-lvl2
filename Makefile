@@ -19,7 +19,7 @@ test-coverage:
 publish:
 	npm publish --dry-run
 
-install-local:
+link:
 	sudo npm link
 
 .PHONY: test
