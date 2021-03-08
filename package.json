@@ -3,7 +3,7 @@
   "version": "0.5.1",
   "description": "validator for yaml and json",
   "private": "true",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "npx jest",
     "eslint": "eslint"
