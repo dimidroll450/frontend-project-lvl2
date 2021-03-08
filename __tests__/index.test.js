@@ -10,11 +10,14 @@ const cases = [
   ['json', 'json', 'plain'],
   ['yml', 'yml', 'stylish'],
   ['yml', 'yml', 'plain'],
+  ['yml', 'yml', 'json'],
+  ['yml', 'json', 'plain'],
 ];
 
 const expectedData = {
   stylish: readFile('stylish-result.txt'),
   plain: readFile('plain-result.txt'),
+  json: readFile('json-result.txt'),
 };
 
 describe.each(cases)('genDiff between %s and %s to %s', (type1, type2, format) => {
