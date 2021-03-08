@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import toParse from './parsers.js';
 import astDiff from './ast-diff.js';
-import render from './render.js';
+import render from './formatters/index.js';
 
 const readFile = (pathToFile) => fs.readFileSync(path.resolve(process.cwd(), pathToFile), 'utf-8');
 

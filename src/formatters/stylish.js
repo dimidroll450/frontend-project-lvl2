@@ -8,7 +8,7 @@ const mapping = {
   unchanged: '  ',
 };
 
-const mapObject = (item, depth = 0) => {
+const mapObject = (item, depth = 1) => {
   if (!_.isObject(item)) {
     return item;
   }
@@ -17,7 +17,7 @@ const mapObject = (item, depth = 0) => {
   return `{\n${string}\n${getIndent(depth - 1)}}`;
 };
 
-const stringify = (ast, depth = 0) => {
+const stringify = (ast, depth = 1) => {
   const map = ast.flatMap((item) => {
     const { state } = item;
 
